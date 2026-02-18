@@ -1,0 +1,134 @@
+/* Globale Variablen für einfache Farbanpassung */
+:root {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-color: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --accent-color: #3b82f6; /* Ein schönes Blau */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: rgba(26, 26, 26, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--accent-color); }
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--text-color); transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* Hero Section */
+header {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 { font-size: 3rem; margin-bottom: 10px; }
+.highlight { color: var(--accent-color); }
+.social-icons { margin: 20px 0; }
+.social-icons a { color: var(--text-color); font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+.social-icons a:hover { color: var(--accent-color); transform: translateY(-3px); }
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover { background-color: #2563eb; }
+
+/* Projekte Section */
+#projects {
+    padding: 80px 10%;
+}
+
+h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+
+.projects-grid {
+    display: grid;
+    /* Automatische Anpassung der Spaltenanzahl (Responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card-top { height: 10px; width: 100%; }
+
+.card-content { padding: 25px; }
+.card-content h3 { margin-bottom: 10px; }
+.card-content p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; }
+
+.tech-stack { margin-bottom: 20px; }
+.tech-stack span {
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.card-links a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 15px;
+}
+.card-links a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+    border-top: 1px solid #333;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Simples Ausblenden für dieses Beispiel */
+    .hero-content h1 { font-size: 2rem; }
+}
